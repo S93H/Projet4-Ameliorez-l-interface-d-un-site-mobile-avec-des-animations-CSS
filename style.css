@@ -19,8 +19,8 @@ h5 {
   font-weight: bolder;
 }
 
-footer {
-  background-color: green;
+.footer__margin {
+  margin-bottom: 10px;
 }
 
 /* Responsive mobile */
@@ -28,14 +28,12 @@ footer {
   body {
     margin: 0;
   }
-  nav {
-    box-shadow: 0 2px 10px grey;
-  }
   nav h1 {
     margin: 3px;
   }
   header .header__location {
     background-color: rgb(212, 209, 209);
+    box-shadow: inset 0px 4px 3px rgba(184, 183, 183, 0.75);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -174,9 +172,31 @@ footer {
   footer {
     background-color: rgb(63, 62, 62);
     color: white;
+    padding: 20px;
+    font-weight: bold;
+  }
+  footer .footer__logoLinks {
+    display: flex;
+    flex-direction: row;
+  }
+  footer .footer__content--links {
+    display: flex;
+    flex-direction: column;
+  }
+  footer .footer__content--logo {
+    display: flex;
+    flex-direction: column;
+    margin-right: 5px;
   }
   footer h5 {
     font-family: "Shrikhand", cursive;
+    margin: 0px 0 20px;
+  }
+  footer a {
+    text-decoration: none;
+    color: white;
+  }
+  footer p {
     margin: 0;
   }
 }/*# sourceMappingURL=style.css.map */

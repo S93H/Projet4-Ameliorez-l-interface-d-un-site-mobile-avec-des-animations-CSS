@@ -2,6 +2,10 @@
   font-family: "Roboto", sans-serif;
 }
 
+body {
+  margin: 0;
+}
+
 .flex-centre {
   display: flex;
   flex-direction: column;
@@ -24,179 +28,282 @@ h5 {
 }
 
 /* Responsive mobile */
-@media screen and (min-width: 320px) {
-  body {
-    margin: 0;
+nav h1 {
+  margin: 3px;
+}
+
+header .header__location {
+  background-color: rgb(212, 209, 209);
+  box-shadow: inset 0px 4px 3px rgba(184, 183, 183, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header p {
+  margin-left: 10px;
+}
+header .header__reservation {
+  background-color: #f6f6f6;
+}
+header .header__reservation h2 {
+  font-weight: bold;
+  margin: 0;
+  padding: 20px;
+}
+header .header__reservation h4 {
+  font-weight: lighter;
+  margin: 0;
+}
+header .header__reservation button {
+  color: white;
+  font-weight: bold;
+  background: linear-gradient(to top, #9356DC, #FF79DA);
+  border: none;
+  margin: 30px 0 50px;
+  padding: 15px;
+  border-radius: 25px;
+  box-shadow: 0 2px 7px grey;
+  transition-duration: 500ms;
+  cursor: pointer;
+}
+header .header__reservation button:hover {
+  box-shadow: 0px 2px 12px grey;
+}
+
+.main__fonctionnement {
+  counter-reset: liste;
+  margin-top: 50px;
+}
+.main__fonctionnement h2 {
+  margin-left: 20px;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+.main__fonctionnement ol {
+  padding: 0;
+}
+.main__fonctionnement li {
+  list-style-type: none;
+  background-color: #f6f6f6;
+  padding: 30px 30px;
+  margin: 20px 20px;
+  border-radius: 1rem;
+  box-shadow: 0px 2px 12px grey;
+  font-weight: bold;
+}
+.main__fonctionnement li::before {
+  content: counter(liste);
+  counter-increment: liste;
+  color: white;
+  background-color: #9356DC;
+  padding: 3px 7px;
+  border-radius: 50%;
+  margin-left: -40px;
+  margin-right: 25px;
+}
+.main__fonctionnement li:hover i {
+  color: #9356DC;
+}
+.main__fonctionnement i {
+  color: grey;
+  margin-right: 20px;
+}
+
+.main__restaurants {
+  background-color: #f6f6f6;
+  margin-top: 50px;
+  padding: 10px;
+  padding-bottom: 50px;
+}
+.main__restaurants h2 {
+  margin-left: 20px;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+.main__restaurants .main__restaurant--card {
+  text-decoration: none;
+}
+.main__restaurants .main__restaurant--card .restaurant__img1 {
+  background-image: url(./images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
+}
+.main__restaurants .main__restaurant--card .restaurant__img2 {
+  background-image: url(./images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg);
+}
+.main__restaurants .main__restaurant--card .restaurant__img3 {
+  background-image: url(./images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
+}
+.main__restaurants .main__restaurant--card .restaurant__img4 {
+  background-image: url(./images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
+}
+.main__restaurants .main__restaurant--card .main__restaurants--img {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+  color: #1a8066;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px 20px 0 0;
+}
+.main__restaurants .main__restaurant--card .main__restaurants--img p {
+  background-color: #99E2D0;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  height: 10px;
+  padding: 10px;
+  border-radius: 2px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+.main__restaurants .main__restaurant--card .main__restaurants--description {
+  background-color: white;
+  border-radius: 0 0 20px 20px;
+  color: black;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.main__restaurants .main__restaurant--card .main__restaurants--description .description h5, .main__restaurants .main__restaurant--card .main__restaurants--description p {
+  margin: 5px;
+}
+.main__restaurants .main__restaurant--card .main__restaurants--description i {
+  margin-top: 8px;
+  margin-right: 10px;
+}
+.main__restaurants .main__restaurant--card .main__restaurants--description .solidheart {
+  color: #9356DC;
+}
+
+footer {
+  background-color: rgb(63, 62, 62);
+  color: white;
+  padding: 20px;
+  font-weight: bold;
+}
+footer .footer__ustensils--link i {
+  margin-right: 5px;
+}
+footer h5 {
+  font-family: "Shrikhand", cursive;
+  margin: 0px 0 20px;
+}
+footer a {
+  text-decoration: none;
+  color: white;
+}
+footer p {
+  margin: 0;
+}
+
+@media screen and (min-width: 450px) {
+  #header__reservation--button {
+    font-size: medium;
+    padding: 20px 40px;
   }
-  nav h1 {
-    margin: 3px;
+  .main__fonctionnement li i {
+    margin-left: 50px;
   }
-  header .header__location {
-    background-color: rgb(212, 209, 209);
-    box-shadow: inset 0px 4px 3px rgba(184, 183, 183, 0.75);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  header p {
-    margin-left: 10px;
-  }
-  header .header__reservation {
-    background-color: #f6f6f6;
-  }
-  header .header__reservation h2 {
-    font-weight: bold;
-    margin: 0;
-    padding: 20px;
-  }
-  header .header__reservation h4 {
-    font-weight: lighter;
-    margin: 0;
-  }
-  header .header__reservation button {
-    color: white;
-    font-weight: bold;
-    background: linear-gradient(to top, #9356DC, #FF79DA);
-    border: none;
-    margin: 30px 0 50px;
-    padding: 15px;
-    border-radius: 25px;
-    box-shadow: 0 2px 7px grey;
-    transition-duration: 500ms;
-    cursor: pointer;
-  }
-  header .header__reservation button:hover {
-    box-shadow: 0px 2px 12px grey;
-  }
+}
+@media screen and (min-width: 550px) {
   .main__fonctionnement {
-    counter-reset: liste;
-    margin-top: 50px;
+    font-size: large;
   }
-  .main__fonctionnement h2 {
-    margin-left: 20px;
-    margin-bottom: 30px;
-    font-weight: bold;
-  }
-  .main__fonctionnement ol {
-    padding: 0;
-  }
-  .main__fonctionnement li {
-    list-style-type: none;
-    background-color: #f6f6f6;
-    padding: 20px 30px;
-    margin: 20px 20px;
-    border-radius: 1rem;
-    box-shadow: 0px 2px 12px grey;
-  }
-  .main__fonctionnement li::before {
-    content: counter(liste);
-    counter-increment: liste;
-    color: white;
-    background-color: #9356DC;
-    padding: 3px 7px;
-    border-radius: 50%;
-    margin-left: -40px;
-    margin-right: 25px;
-  }
-  .main__fonctionnement li:hover i {
-    color: #9356DC;
-  }
-  .main__fonctionnement i {
-    color: grey;
-    margin-right: 10px;
-  }
-  .main__restaurants {
-    background-color: #f6f6f6;
-    margin-top: 50px;
-    padding: 10px;
-    padding-bottom: 50px;
-  }
-  .main__restaurants h2 {
-    margin-left: 20px;
-    margin-bottom: 30px;
-    font-weight: bold;
-  }
-  .main__restaurants .main__restaurant--card {
-    text-decoration: none;
-  }
-  .main__restaurants .main__restaurant--card .restaurant__img1 {
-    background-image: url(./images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
-  }
-  .main__restaurants .main__restaurant--card .restaurant__img2 {
-    background-image: url(./images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg);
-  }
-  .main__restaurants .main__restaurant--card .restaurant__img3 {
-    background-image: url(./images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
-  }
-  .main__restaurants .main__restaurant--card .restaurant__img4 {
-    background-image: url(./images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
-  }
-  .main__restaurants .main__restaurant--card .main__restaurants--img {
-    margin-top: 20px;
-    display: flex;
-    justify-content: flex-end;
-    color: #1a8066;
-    height: 200px;
-    background-size: cover;
-    background-position: center;
-    border-radius: 20px 20px 0 0;
-  }
-  .main__restaurants .main__restaurant--card .main__restaurants--img p {
-    background-color: #99E2D0;
-    display: flex;
-    text-align: center;
-    align-items: center;
-    height: 10px;
-    padding: 10px;
-    border-radius: 2px;
-    margin-right: 10px;
-    margin-top: 10px;
-  }
-  .main__restaurants .main__restaurant--card .main__restaurants--description {
-    background-color: white;
-    border-radius: 0 0 20px 20px;
-    color: black;
-    padding: 10px;
-    display: flex;
-  }
-  .main__restaurants .main__restaurant--card .main__restaurants--description .description h5, .main__restaurants .main__restaurant--card .main__restaurants--description p {
-    margin: 5px;
-  }
-  .main__restaurants .main__restaurant--card .main__restaurants--description i {
-    margin-top: 8px;
+  .main__fonctionnement li i {
     margin-left: 90px;
   }
-  .main__restaurants .main__restaurant--card .main__restaurants--description .solidheart {
-    color: #9356DC;
+  .main__restaurants {
+    font-size: large;
   }
-  footer {
-    background-color: rgb(63, 62, 62);
-    color: white;
+}
+@media screen and (min-width: 650px) {
+  .main__fonctionnement li i {
+    margin-left: 150px;
+  }
+}
+@media screen and (min-width: 767.98px) {
+  body {
+    font-size: large;
+  }
+  .main__fonctionnement li i {
+    margin-left: 220px;
+  }
+}
+@media screen and (min-width: 900px) {
+  .main__fonctionnement li i {
+    margin-left: 300px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .main__fonctionnement {
     padding: 20px;
-    font-weight: bold;
+    margin-top: 0;
   }
-  footer .footer__logoLinks {
+  .main__fonctionnement h2 {
+    margin-left: 50px;
+  }
+  .main__fonctionnement ol {
+    padding: 30px;
     display: flex;
     flex-direction: row;
+    justify-content: center;
   }
-  footer .footer__content--links {
+  .main__fonctionnement li {
+    font-size: medium;
     display: flex;
-    flex-direction: column;
+    margin: 20px;
+    padding: 20px;
+    width: 250px;
+  }
+  .main__fonctionnement li i {
+    margin: 0 15px 0 0;
+  }
+  .center {
+    display: flex;
+    justify-content: center;
+  }
+  .main__restaurants {
+    margin-top: 0;
+  }
+  .main__restaurants h2 {
+    margin-left: 60px;
+  }
+  .main__restaurants--cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .main__restaurants--cards a {
+    margin: 10px 70px;
+  }
+  .main__restaurant--card {
+    width: 400px;
+  }
+  footer {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    padding-top: 50px;
+  }
+  footer h5 {
+    margin: 10px 10px 10px 60px;
+  }
+  footer .footer__content {
+    display: flex;
+    margin: 10px;
+  }
+  footer .footer__content .footer__ustensils--link {
+    margin-right: 10px;
+  }
+  footer .footer__content .footer__hanshake--link {
+    margin-right: 40px;
+  }
+  footer .footer__content p {
+    margin-right: 20px;
   }
   footer .footer__content--logo {
     display: flex;
-    flex-direction: column;
-    margin-right: 5px;
   }
-  footer h5 {
-    font-family: "Shrikhand", cursive;
-    margin: 0px 0 20px;
-  }
-  footer a {
-    text-decoration: none;
-    color: white;
-  }
-  footer p {
-    margin: 0;
+  footer .footer__content--links {
+    display: flex;
   }
 }/*# sourceMappingURL=style.css.map */

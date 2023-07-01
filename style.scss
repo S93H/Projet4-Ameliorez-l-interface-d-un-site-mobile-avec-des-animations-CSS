@@ -2,6 +2,10 @@
     font-family: 'Roboto', sans-serif;
 }
 
+body {
+    margin: 0;
+}
+
 $color__purple: #9356DC;
 $color__pink: #FF79DA;
 $color__green: #99E2D0;
@@ -32,17 +36,6 @@ h5 {
 
 
 /* Responsive mobile */
-
-@media screen and (min-width: 320px) {
-
-    body {
-        // display: flex;
-        // flex-direction: column;
-        // justify-content: center;
-        // align-items: center;
-        // text-align: center;
-        margin: 0;
-    }
 
     nav {
 
@@ -118,11 +111,13 @@ h5 {
         & li {
             list-style-type: none;
             background-color: $color__light;
-            padding: 20px 30px;
+            padding: 30px 30px;
             margin: 20px 20px;
             border-radius: 1rem;
             // box-shadow: 2px 1px 8px -3px black;
             box-shadow: 0px 2px 12px grey;
+            font-weight: bold;
+
 
             &::before {
                 content: counter(liste);
@@ -144,7 +139,7 @@ h5 {
 
         & i {
             color: grey;
-            margin-right: 10px;
+            margin-right: 20px;
         }
     }
 
@@ -208,6 +203,7 @@ h5 {
                 color: black;
                 padding: 10px;
                 display: flex;
+                justify-content: space-between;
 
 
                 & .description h5, p {
@@ -216,7 +212,7 @@ h5 {
 
                 & i {
                     margin-top: 8px;
-                    margin-left: 90px;
+                    margin-right: 10px;
                 }
 
                 & .solidheart {
@@ -234,38 +230,172 @@ h5 {
         padding: 20px;
         font-weight: bold;
 
-        & .footer__logoLinks {
-            display: flex;
-            flex-direction: row;
+        & .footer__ustensils--link i {
+            margin-right: 5px;
         }
 
-        & .footer__content--links {
+         & h5 {
+             font-family: 'Shrikhand', cursive;
+             margin: 0px 0 20px;
+
+         }
+
+        & a {
+            text-decoration: none;
+             color: white;
+         }
+
+         & p {
+             margin: 0;
+         }
+    }
+
+@media screen and (min-width: 450px) {
+
+   #header__reservation--button {
+    font-size: medium;
+    padding: 20px 40px;
+   }
+
+   .main__fonctionnement li i {
+    margin-left: 50px;
+   }
+}
+
+@media screen and (min-width: 550px) {
+    .main__fonctionnement {
+        font-size: large;
+
+        & li i {
+            margin-left: 90px;
+
+        }
+    }
+
+    .main__restaurants {
+        font-size: large;
+    }
+}
+
+@media screen and (min-width: 650px) {
+    .main__fonctionnement {
+        & li i {
+            margin-left: 150px;
+
+        }
+    }
+}
+
+@media screen and (min-width: 767.98px) {
+    body {
+        font-size: large;
+    }
+
+    .main__fonctionnement {
+        & li i {
+            margin-left: 220px;
+
+        }
+    }
+
+}
+
+@media screen and (min-width: 900px) {
+    .main__fonctionnement {
+        & li i {
+            margin-left: 300px;
+
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .main__fonctionnement {
+        padding: 20px;
+        margin-top: 0;
+    }
+    .main__fonctionnement h2 {
+        margin-left: 50px;
+    }
+
+    .main__fonctionnement ol {
+        padding: 30px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .main__fonctionnement li {
+        font-size: medium;
+        display: flex;
+        margin: 20px;
+        padding: 20px;
+        width: 250px;
+
+        & i {
+            margin: 0 15px 0 0;
+        }
+    }
+
+    .center {
+        display: flex;
+        justify-content: center;
+    }
+
+    .main__restaurants {
+        margin-top: 0;
+    }
+
+    .main__restaurants h2 {
+        margin-left: 60px;
+    }
+
+    .main__restaurants--cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        & a {
+            margin: 10px 70px;
+        }
+    
+    }
+
+    .main__restaurant--card {
+        width: 400px;
+    }
+
+    footer {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+        padding-top: 50px;
+
+        & h5 {
+            margin: 10px 10px 10px 60px;
+        }
+
+        & .footer__content {
             display: flex;
-            flex-direction: column;
+            margin: 10px;
+
+            & .footer__ustensils--link {
+                margin-right: 10px;
+            }
+            & .footer__hanshake--link {
+                margin-right: 40px;
+            }
+
+            & p {
+                margin-right: 20px;
+            }
         }
 
         & .footer__content--logo {
             display: flex;
-            flex-direction: column;
-            margin-right: 5px;
         }
 
-        & h5 {
-            font-family: 'Shrikhand', cursive;
-            margin: 0px 0 20px;
-
-        }
-
-        & a {
-            text-decoration: none;
-            color: white;
-        }
-
-        & p {
-            margin: 0;
+        & .footer__content--links {
+            display: flex;
         }
     }
-
-
 
 }

@@ -454,4 +454,24 @@ main .btn:hover {
   height: 0.25rem;
   width: 2.5rem;
   background-color: #99E2D0;
+}
+
+.main2bis h4::after {
+  content: "";
+  position: absolute;
+  top: 50.6rem;
+  left: 0.7rem;
+  height: 0.25rem;
+  width: 2.5rem;
+  background-color: #99E2D0;
+}
+
+.main3bis h4::after {
+  content: "";
+  position: absolute;
+  top: 69.8rem;
+  left: 0.7rem;
+  height: 0.25rem;
+  width: 2.5rem;
+  background-color: #99E2D0;
 }/*# sourceMappingURL=style.css.map */

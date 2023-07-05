@@ -632,3 +632,31 @@ main {
         }
     }
 }
+
+.main2bis {
+    & h4 {
+        &::after {
+            content: "";
+            position: absolute;
+            top: 50.6rem;
+            left: .7rem;
+            height: 0.25rem;
+            width: 2.5rem;
+            background-color: $color__green;
+        }
+    }
+}
+
+.main3bis {
+    & h4 {
+        &::after {
+            content: "";
+            position: absolute;
+            top: 69.8rem;
+            left: .7rem;
+            height: 0.25rem;
+            width: 2.5rem;
+            background-color: $color__green;
+        }
+    }
+}

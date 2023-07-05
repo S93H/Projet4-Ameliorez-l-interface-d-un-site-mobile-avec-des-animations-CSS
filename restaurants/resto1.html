@@ -12,40 +12,59 @@
     <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/d52399ed04.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../style.css">
 
     <title>ohmyfood</title>
 </head>
 
 <body>
     <header>
-        <nav>
+        <nav class="flex-centre">
             <a href="../index.html"><i class="fa-solid fa-arrow-left"></i></a>
             <h1>ohmyfood</h1>
         </nav>
+
     </header>
+    <div class="image">
+        <img class="Banner__img" src="../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="">
+    </div>
 
     <main>
-        <div class="main__resto--img"><img src="" alt=""></div>
+        <!-- <div class="main__resto--img"><img src="" alt=""></div> -->
         <div class="main__resto--titre">
-            <h1>La palette du goût</h1>
-            <i class="fa-regular fa-heart"></i>
+            <h2>La palette du goût</h2>
+            <!-- <input type="checkbox" name="" id="">           
+            <i class="fa-regular fa-heart heart"></i>
+            <i class="fa-solid fa-heart solidheart"></i> -->
+            <label class="custom-checkbox">
+                <input type="checkbox" />
+                <i class="fa-regular fa-heart heart unchecked"></i>
+                <i class="fa-solid fa-heart solidheart checked"></i>
+            </label>
+
+
+
+
         </div>
-        <section class="main__resto--entrees">
+        <section class="main__resto--cards  main1">
             <h4>Entrées</h4>
             <div class="main__entrees--content">
-                <div class="main__entrees--box">
+                <div class="main__cards--box">
                     <div class="box__entrees--description">
                         <h5>Fricassée d'escargots</h5>
                         <p>Au piment d'Espelette</p>
                     </div>
                     <div class="box__entrees--prix">25<i class="fa-solid fa-euro-sign"></i></div>
                 </div>
-                <div class="main__entrees--box">
-                    <h5>Foie gras de canard mi-cuit</h5>
-                    <p>Et ses copeaux de truffe noire</p>
+                <div class="main__cards--box">
+                    <div class="box__entrees--description">
+                        <h5>Foie gras de canard mi-cuit</h5>
+                        <p>Et ses copeaux de truffe noire</p>
+                    </div>
+                    <div class="box__entrees--prix">35<i class="fa-solid fa-euro-sign"></i></div>
                 </div>
-                <div class="box__entrees--prix">35<i class="fa-solid fa-euro-sign"></i></div>
-                <div class="main__entrees--box">
+
+                <div class="main__cards--box">
                     <div class="box__entrees--description">
                         <h5>Oeuf au plat</h5>
                         <p>Assaisonné à la truffe sur lit de caviar</p>
@@ -55,58 +74,66 @@
 
             </div>
         </section>
-        <section class="main__resto--plats">
+        <section class="main__resto--cards main2">
             <h4>Plats</h4>
-            <div class="main__entree--content">
-                <div class="main__entree--box">
-                    <div class="box__entree--description">
+            <div class="main__entrees--content">
+                <div class="main__cards--box">
+                    <div class="box__entrees--description">
                         <h5>Filet de boeuf aux herbes</h5>
                         <p>Accompagné de sa ribambelle de légumes</p>
                     </div>
-                    <div class="box__entree--prix">40<i class="fa-solid fa-euro-sign"></i></div>
+                    <div class="box__entrees--prix">40<i class="fa-solid fa-euro-sign"></i></div>
                 </div>
-                <div class="main__entree--box">
-                    <h5>Parmentier de queue de boeuf</h5>
-                    <p>À la truffe noire sur sa purée de panais</p>
+                <div class="main__cards--box">
+                    <div class="main__entrees--description">
+                        <h5>Parmentier de queue de boeuf</h5>
+                        <p>À la truffe noire sur sa purée de panais</p>
+                    </div>
+                    <div class="box__entrees--prix">35<i class="fa-solid fa-euro-sign"></i></div>
                 </div>
-                <div class="box__entree--prix">35<i class="fa-solid fa-euro-sign"></i></div>
-                <div class="main__entree--box">
-                    <div class="box__entree--description">
+
+                <div class="main__cards--box">
+                    <div class="box__entrees--description">
                         <h5>Filet de turbot</h5>
                         <p>Aux agrumes</p>
                     </div>
-                    <div class="box__entree--prix">44<i class="fa-solid fa-euro-sign"></i></div>
+                    <div class="box__entrees--prix">44<i class="fa-solid fa-euro-sign"></i></div>
                 </div>
 
             </div>
         </section>
-        <section class="main__resto--desserts">
+        <section class="main__resto--cards main3">
             <h4>Desserts</h4>
-            <div class="main__entree--content">
-                <div class="main__entree--box">
-                    <div class="box__entree--description">
+            <div class="main__entrees--content">
+                <div class="main__cards--box">
+                    <div class="box__entrees--description">
                         <h5>Paris-Brest</h5>
                         <p>Revisité</p>
                     </div>
-                    <div class="box__entree--prix">18<i class="fa-solid fa-euro-sign"></i></div>
+                    <div class="box__entrees--prix">18<i class="fa-solid fa-euro-sign"></i></div>
                 </div>
-                <div class="main__entree--box">
-                    <h5>Macaron au chocolat d'exception</h5>
+                <div class="main__cards--box">
+                    <div class="main__entrees--description">
+                        <h5>Macaron au chocolat d'exception</h5>
                     <p>Et glace à la vanille de Madagascar</p>
+                    </div>
+                    <div class="box__entrees--prix">22<i class="fa-solid fa-euro-sign"></i></div>
                 </div>
-                <div class="box__entree--prix">22<i class="fa-solid fa-euro-sign"></i></div>
-                <div class="main__entree--box">
-                    <div class="box__entree--description">
+                
+                <div class="main__cards--box">
+                    <div class="box__entrees--description">
                         <h5>Mousse au chocolat</h5>
                         <p>Au piment d'Espelette et à la truffe noire</p>
                     </div>
-                    <div class="box__entree--prix">23<i class="fa-solid fa-euro-sign"></i></div>
+                    <div class="box__entrees--prix">23<i class="fa-solid fa-euro-sign"></i></div>
                 </div>
 
             </div>
         </section>
-
-        <button>Commander</button>
+        <div class="btn__resto">
+            <button class="btn">Commander</button>
+        </div>
+        
 
     </main>
 
@@ -114,16 +141,20 @@
     <footer>
         <h5>ohmyfood</h5>
         <div class="footer__content">
-            <div class="footer__content--logo">
-                <i class="fa-solid fa-utensils"></i>
-                <a href="#">Proposer un restaurant</a>
+            <div class="footer__content--links">
+                <div class="footer__ustensils--link">
+                    <i class="fa-solid fa-utensils footer__margin"></i>
+                    <a href="#" class="footer__margin">Proposer un restaurant</a>
+                </div>
+                <div class="footer__hanshake--link">
+                    <i class="fa-solid fa-handshake-angle footer__margin"></i>
+                    <a href="#" class="footer__margin">Devenir un partenaire</a>
+                </div>
+
             </div>
-            <div class="footer__content--logo">
-                <i class="fa-solid fa-handshake-angle"></i>
-                <a href="#">Devenir un partenaire</a>
-            </div>
-            <p>Mentions légales</p>
-            <p>Contact</p>
+
+            <p class="footer__margin">Mentions légales</p>
+            <p class="footer__margin">Contact</p>
         </div>
     </footer>
 </body>

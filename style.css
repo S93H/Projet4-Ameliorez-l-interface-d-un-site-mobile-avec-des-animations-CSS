@@ -31,6 +31,12 @@ h5 {
 nav h1 {
   margin: 3px;
 }
+nav i {
+  color: black;
+  position: absolute;
+  left: 5%;
+  top: 0.7%;
+}
 
 header .header__location {
   background-color: rgb(212, 209, 209);
@@ -67,7 +73,8 @@ header .header__reservation button {
   cursor: pointer;
 }
 header .header__reservation button:hover {
-  box-shadow: 0px 2px 12px grey;
+  background: linear-gradient(to top, rgb(187, 108, 240), rgb(245, 147, 240));
+  box-shadow: 0px 2px 20px grey;
 }
 
 .main__fonctionnement {
@@ -90,6 +97,9 @@ header .header__reservation button:hover {
   border-radius: 1rem;
   box-shadow: 0px 2px 12px grey;
   font-weight: bold;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 .main__fonctionnement li::before {
   content: counter(liste);
@@ -98,15 +108,15 @@ header .header__reservation button:hover {
   background-color: #9356DC;
   padding: 3px 7px;
   border-radius: 50%;
-  margin-left: -40px;
-  margin-right: 25px;
-}
-.main__fonctionnement li:hover i {
-  color: #9356DC;
+  position: absolute;
+  left: 2%;
 }
 .main__fonctionnement i {
   color: grey;
   margin-right: 20px;
+}
+.main__fonctionnement i:hover {
+  color: #9356DC;
 }
 
 .main__restaurants {
@@ -164,15 +174,20 @@ header .header__reservation button:hover {
   display: flex;
   justify-content: space-between;
 }
-.main__restaurants .main__restaurant--card .main__restaurants--description .description h5, .main__restaurants .main__restaurant--card .main__restaurants--description p {
+.main__restaurants .main__restaurant--card .main__restaurants--description .description h5,
+.main__restaurants .main__restaurant--card .main__restaurants--description p {
   margin: 5px;
 }
 .main__restaurants .main__restaurant--card .main__restaurants--description i {
   margin-top: 8px;
   margin-right: 10px;
 }
-.main__restaurants .main__restaurant--card .main__restaurants--description .solidheart {
-  color: #9356DC;
+.main__restaurants .main__restaurant--card .main__restaurants--description .fa-solid {
+  color: transparent;
+  background: linear-gradient(to top, #9356DC, #FF79DA);
+  background-clip: text;
+  -webkit-background-clip: text;
+  transition: all 200ms ease-in;
 }
 
 footer {
@@ -201,37 +216,18 @@ footer p {
     font-size: medium;
     padding: 20px 40px;
   }
-  .main__fonctionnement li i {
-    margin-left: 50px;
-  }
 }
 @media screen and (min-width: 550px) {
-  .main__fonctionnement {
-    font-size: large;
-  }
-  .main__fonctionnement li i {
-    margin-left: 90px;
+  .main__fonctionnement li::before {
+    left: 1%;
   }
   .main__restaurants {
     font-size: large;
   }
 }
-@media screen and (min-width: 650px) {
-  .main__fonctionnement li i {
-    margin-left: 150px;
-  }
-}
 @media screen and (min-width: 767.98px) {
   body {
     font-size: large;
-  }
-  .main__fonctionnement li i {
-    margin-left: 220px;
-  }
-}
-@media screen and (min-width: 900px) {
-  .main__fonctionnement li i {
-    margin-left: 300px;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -242,21 +238,8 @@ footer p {
   .main__fonctionnement h2 {
     margin-left: 50px;
   }
-  .main__fonctionnement ol {
-    padding: 30px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
-  .main__fonctionnement li {
-    font-size: medium;
-    display: flex;
-    margin: 20px;
-    padding: 20px;
-    width: 250px;
-  }
-  .main__fonctionnement li i {
-    margin: 0 15px 0 0;
+  .main__fonctionnement li::before {
+    left: 3%;
   }
   .center {
     display: flex;
@@ -306,4 +289,169 @@ footer p {
   footer .footer__content--links {
     display: flex;
   }
+}
+@media screen and (min-width: 1200px) {
+  .main__fonctionnement h2 {
+    margin-left: 60px;
+  }
+  .main__fonctionnement li {
+    font-size: medium;
+  }
+  .main__fonctionnement li::before {
+    left: 2%;
+  }
+  .main__restaurants h2 {
+    margin-left: 70px;
+  }
+  .main__restaurant--card {
+    width: 500px;
+  }
+  .main__restaurants--cards a {
+    margin: 10px 30px;
+  }
+}
+@media screen and (min-width: 1350px) {
+  .main__fonctionnement h2 {
+    margin-left: 130px;
+  }
+  .main__restaurants h2 {
+    margin-left: 140px;
+  }
+}
+/********************* Pages Restaurants **********************/
+.Banner__img {
+  display: block;
+  width: 100%;
+  height: 15vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+main {
+  background-color: #f6f6f6;
+}
+main .main__resto--titre {
+  margin-top: -2rem;
+  padding: 10px 10px;
+  border-radius: 2rem 2rem 0 0;
+  position: relative;
+  background-color: #f6f6f6;
+  display: flex;
+  align-items: center;
+}
+main .main__resto--titre h2 {
+  margin-right: 30px;
+  font-weight: normal;
+  font-family: "Shrikhand", cursive;
+}
+main .main__resto--titre i {
+  font-size: 2rem;
+  position: absolute;
+  right: 1rem;
+  top: 35%;
+}
+main .main__resto--titre .fa-solid {
+  color: transparent;
+  background: linear-gradient(to top, #9356DC, #FF79DA);
+  background-clip: text;
+  -webkit-background-clip: text;
+  transition: all 200ms ease-in;
+}
+main .custom-checkbox input[type=checkbox],
+main .custom-checkbox .checked {
+  display: none;
+}
+main .custom-checkbox input[type=checkbox]:checked ~ .checked {
+  display: inline-block;
+}
+main .custom-checkbox input[type=checkbox]:checked ~ .unchecked {
+  display: none;
+}
+main .btn__resto {
+  display: flex;
+  justify-content: center;
+}
+main .btn {
+  color: white;
+  font-weight: bold;
+  background: linear-gradient(to top, #9356DC, #FF79DA);
+  border: none;
+  margin: 30px 0 50px;
+  padding: 15px 40px;
+  border-radius: 25px;
+  box-shadow: 0 2px 7px grey;
+  transition-duration: 500ms;
+  cursor: pointer;
+}
+main .btn:hover {
+  background: linear-gradient(to top, rgb(187, 108, 240), rgb(245, 147, 240));
+  box-shadow: 0px 2px 20px grey;
+}
+
+.main__resto--cards {
+  padding: 10px;
+}
+.main__resto--cards h4 {
+  text-transform: uppercase;
+  font-weight: lighter;
+}
+.main__resto--cards h4::after {
+  content: "";
+  position: absolute;
+  top: 26.8rem;
+  left: 0.7rem;
+  height: 0.25rem;
+  width: 2.5rem;
+  background-color: #99E2D0;
+}
+.main__resto--cards .main__cards--box {
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  font-size: small;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 15px;
+  box-shadow: 0px 2px 5px grey;
+}
+.main__resto--cards .main__cards--box h5 {
+  margin: 0;
+  font-size: 15px;
+}
+.main__resto--cards .main__cards--box p {
+  margin: 5px 0;
+  font-weight: lighter;
+}
+.main__resto--cards .box__entrees--prix {
+  font-weight: bold;
+  display: flex;
+  justify-content: baseline;
+  align-self: last baseline;
+  margin: 5px 0;
+}
+.main__resto--cards .box__entrees--prix i {
+  margin: 3px;
+  font-size: smaller;
+}
+
+.main2 h4::after {
+  content: "";
+  position: absolute;
+  top: 46rem;
+  left: 0.7rem;
+  height: 0.25rem;
+  width: 2.5rem;
+  background-color: #99E2D0;
+}
+
+.main3 h4::after {
+  content: "";
+  position: absolute;
+  top: 65.2rem;
+  left: 0.7rem;
+  height: 0.25rem;
+  width: 2.5rem;
+  background-color: #99E2D0;
 }/*# sourceMappingURL=style.css.map */

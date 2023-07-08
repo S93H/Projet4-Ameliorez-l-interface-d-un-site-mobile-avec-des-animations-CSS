@@ -407,29 +407,64 @@ main .btn:hover {
 .main__resto--cards .main__cards--box {
   background-color: white;
   display: flex;
-  flex-wrap: wrap;
+  overflow: hidden;
+  height: 70px;
+  margin: 10px 0;
+  border-radius: 15px;
+  box-shadow: 0px 2px 5px grey;
+}
+.main__resto--cards .main__cards--box:hover .box__entrees--check {
+  margin: 0;
+}
+.main__resto--cards .main__cards--box .main__cards--section1 {
+  padding: 10px 0 10px 10px;
+  display: flex;
+  width: 100%;
   align-items: center;
   justify-content: space-between;
   font-size: small;
-  margin: 10px 0;
-  padding: 10px;
-  border-radius: 15px;
-  box-shadow: 0px 2px 5px grey;
+  overflow: hidden;
 }
 .main__resto--cards .main__cards--box h5 {
   margin: 0;
   font-size: 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-.main__resto--cards .main__cards--box p {
+.main__resto--cards .main__cards--box .box__entrees--check {
+  background-color: #99E2D0;
+  margin-left: auto;
+  padding: 25px 15px;
+  border-radius: 0 15px 15px 0;
+  align-items: center;
+  justify-content: center;
+  margin-right: -5rem;
+  transition: all 0.5s;
+}
+.main__resto--cards .main__cards--box .box__entrees--check .checkedIcone {
+  padding: 3px;
+  border-radius: 50%;
+  color: #99E2D0;
+  background: white;
+}
+.main__resto--cards .box__entrees--description {
+  overflow: hidden;
+}
+.main__resto--cards .box__entrees--description p {
   margin: 5px 0;
+  padding-right: 10px;
   font-weight: lighter;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .main__resto--cards .box__entrees--prix {
   font-weight: bold;
   display: flex;
   justify-content: baseline;
   align-self: last baseline;
-  margin: 5px 0;
+  margin: 5px 20px 5px auto;
 }
 .main__resto--cards .box__entrees--prix i {
   margin: 3px;
@@ -439,7 +474,7 @@ main .btn:hover {
 .main2 h4::after {
   content: "";
   position: absolute;
-  top: 46rem;
+  top: 47rem;
   left: 0.7rem;
   height: 0.25rem;
   width: 2.5rem;
@@ -449,7 +484,7 @@ main .btn:hover {
 .main3 h4::after {
   content: "";
   position: absolute;
-  top: 65.2rem;
+  top: 67rem;
   left: 0.7rem;
   height: 0.25rem;
   width: 2.5rem;
@@ -459,7 +494,7 @@ main .btn:hover {
 .main2bis h4::after {
   content: "";
   position: absolute;
-  top: 50.6rem;
+  top: 52rem;
   left: 0.7rem;
   height: 0.25rem;
   width: 2.5rem;
@@ -469,9 +504,58 @@ main .btn:hover {
 .main3bis h4::after {
   content: "";
   position: absolute;
-  top: 69.8rem;
+  top: 72rem;
   left: 0.7rem;
   height: 0.25rem;
   width: 2.5rem;
   background-color: #99E2D0;
+}
+
+@media screen and (min-width: 768px) {
+  .main__resto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .main__resto .main__resto--titre {
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+    font-size: large;
+  }
+  .main__resto .main__resto--titre i {
+    position: relative;
+    padding-left: 40px;
+  }
+  .main__resto .main__resto--cards {
+    width: 70%;
+    font-size: larger;
+  }
+  .main__resto .main__resto--cards h4::after {
+    width: 3.3rem;
+  }
+  .main__resto .main__resto--cards .titre__entrees::after {
+    left: 15%;
+    top: 28.7rem;
+    position: absolute;
+  }
+  .main__resto .main__resto--cards .titre__plats::after {
+    top: 50.2rem;
+    left: 15%;
+  }
+  .main__resto .main__resto--cards .titre__desserts::after {
+    top: 71.8rem;
+    left: 15%;
+  }
+  .main__resto .main__resto--cards .main__cards--section1 {
+    font-size: medium;
+  }
+  .main__resto .main__resto--cards .main__cards--section1 h5 {
+    font-size: larger;
+  }
+  .main__resto .btn {
+    font-size: large;
+    padding: 15px 70px;
+  }
 }/*# sourceMappingURL=style.css.map */

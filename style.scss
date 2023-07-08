@@ -569,25 +569,80 @@ main {
     .main__cards--box {
         background-color: white;
         display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-between;
-        font-size: small;
+        overflow: hidden;
+        height: 70px;
         margin: 10px 0;
-        padding: 10px;
         border-radius: 15px;
         box-shadow: 0px 2px 5px grey;
+
+        &:hover {
+            & .box__entrees--check {
+                margin: 0;
+            }
+        }
+
+        & .main__cards--section1 {
+            padding: 10px 0 10px 10px;
+            display: flex;
+            width: 100%;
+            // flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            font-size: small;
+            overflow: hidden;
+
+            //    & .main__entrees--description {
+            //         overflow: hidden;
+
+            //         & p {
+            //             margin: 5px 0;
+            //             font-weight: lighter;
+            //             white-space: nowrap;
+            //         }
+            //     }
+        }
 
         & h5 {
             margin: 0;
             font-size: 15px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
+
+
+        & .box__entrees--check {
+            background-color: $color__green;
+            margin-left: auto;
+            padding: 25px 15px;
+            border-radius: 0 15px 15px 0;
+            align-items: center;
+            justify-content: center;
+            margin-right: -5rem;
+            transition: all .5s;
+
+            & .checkedIcone {
+                padding: 3px;
+                border-radius: 50%;
+                color: $color__green;
+                background: white;
+            }
+
+        }
+
+    }
+
+    & .box__entrees--description {
+        overflow: hidden;
 
         & p {
             margin: 5px 0;
+            padding-right: 10px;
             font-weight: lighter;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
-
     }
 
     & .box__entrees--prix {
@@ -595,7 +650,7 @@ main {
         display: flex;
         justify-content: baseline;
         align-self: last baseline;
-        margin: 5px 0;
+        margin: 5px 20px 5px auto;
 
         & i {
             margin: 3px;
@@ -605,12 +660,24 @@ main {
 
 }
 
+// .main__entrees--description {
+//     overflow: hidden;
+// }
+
+// .main__entrees--description p {
+//     margin: 5px 0;
+//     font-weight: lighter;
+//     white-space: nowrap;
+//     overflow: hidden;
+//     text-overflow: ellipsis;
+// }
+
 .main2 {
     & h4 {
         &::after {
             content: "";
             position: absolute;
-            top: 46rem;
+            top: 47rem;
             left: .7rem;
             height: 0.25rem;
             width: 2.5rem;
@@ -624,7 +691,7 @@ main {
         &::after {
             content: "";
             position: absolute;
-            top: 65.2rem;
+            top: 67rem;
             left: .7rem;
             height: 0.25rem;
             width: 2.5rem;
@@ -638,7 +705,7 @@ main {
         &::after {
             content: "";
             position: absolute;
-            top: 50.6rem;
+            top: 52rem;
             left: .7rem;
             height: 0.25rem;
             width: 2.5rem;
@@ -652,11 +719,91 @@ main {
         &::after {
             content: "";
             position: absolute;
-            top: 69.8rem;
+            top: 72rem;
             left: .7rem;
             height: 0.25rem;
             width: 2.5rem;
             background-color: $color__green;
         }
     }
+}
+
+@media screen and (min-width: 768px) {
+
+    .main__resto {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        & .main__resto--titre {
+            width: 80%;
+            align-items: center;
+            justify-content: center;
+            font-size: large;
+
+            & i {
+                position: relative;
+                padding-left: 40px;
+            }
+        }
+
+        & .main__resto--cards {
+            width: 70%;
+            font-size: larger;
+
+            & h4::after {
+                width: 3.3rem;
+            }
+
+            & .titre__entrees {
+                &::after {
+                    left: 15%;
+                    top: 28.7rem;
+                    position: absolute;
+                }
+            }
+
+            & .titre__plats {
+                &::after {
+                    top: 50.2rem;
+                    left: 15%;
+                }
+            }
+
+            & .titre__desserts {
+                &::after {
+                    top: 71.8rem;
+                    left: 15%;
+                }
+            }
+
+            & .main__cards--section1 {
+                font-size:medium;
+                & h5 {
+                    font-size: larger;
+                }
+            }
+
+        }
+
+        & .btn {
+            font-size: large;
+            padding: 15px 70px;
+        }
+
+    }
+
+    
+
+    // .main__entrees--content {
+    //     display: flex;
+    //     flex-direction: column;
+    //     justify-content: center;
+    //     align-items: center;
+
+    //     & .main__cards--box {
+    //         width: 70%;
+    //     }
+    // }
 }

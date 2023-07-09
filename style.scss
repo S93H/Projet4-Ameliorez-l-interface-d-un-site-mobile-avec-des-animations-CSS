@@ -223,6 +223,7 @@ header {
             & i {
                 margin-top: 8px;
                 margin-right: 10px;
+
             }
 
             .fa-solid {
@@ -232,6 +233,7 @@ header {
                 -webkit-background-clip: text;
                 transition: all 200ms ease-in;
             }
+
         }
     }
 
@@ -474,7 +476,7 @@ footer {
 
 }
 
-main {
+.main__resto  {
     background-color: $color__light;
 
     & .main__resto--titre {
@@ -510,18 +512,34 @@ main {
 
     }
 
+    // .custom-checkbox input[type="checkbox"],
+    // .custom-checkbox .checked {
+    //     display: none;
+    // }
+
+    // .custom-checkbox input[type="checkbox"]:checked~.checked {
+    //     display: inline-block;
+    // }
+
+    // .custom-checkbox input[type="checkbox"]:checked~.unchecked {
+    //     display: none;
+    // }
+
     .custom-checkbox input[type="checkbox"],
     .custom-checkbox .checked {
         display: none;
     }
 
-    .custom-checkbox input[type="checkbox"]:checked~.checked {
+    .custom-checkbox input[type="checkbox"]:hover~.checked {
         display: inline-block;
     }
 
-    .custom-checkbox input[type="checkbox"]:checked~.unchecked {
+    .custom-checkbox input[type="checkbox"]:hover~.unchecked {
         display: none;
     }
+
+
+
 
     & .btn__resto {
         display: flex;
@@ -672,59 +690,34 @@ main {
 //     text-overflow: ellipsis;
 // }
 
-.main2 {
-    & h4 {
-        &::after {
-            content: "";
-            position: absolute;
-            top: 47rem;
-            left: .7rem;
-            height: 0.25rem;
-            width: 2.5rem;
-            background-color: $color__green;
-        }
+.main__resto--cards {
+    & h4::after {
+        content: "";
+        position: absolute;
+        height: 0.25rem;
+        width: 2.5rem;
+        background-color: $color__green;
+        left: .7rem;
     }
-}
 
-.main3 {
-    & h4 {
-        &::after {
-            content: "";
-            position: absolute;
-            top: 67rem;
-            left: .7rem;
-            height: 0.25rem;
-            width: 2.5rem;
-            background-color: $color__green;
-        }
+    & .titre__entrees::after {
+        top: 25.3rem;
     }
-}
 
-.main2bis {
-    & h4 {
-        &::after {
-            content: "";
-            position: absolute;
-            top: 52rem;
-            left: .7rem;
-            height: 0.25rem;
-            width: 2.5rem;
-            background-color: $color__green;
-        }
+    & .titre__plats::after {
+        top: 45.5rem;
     }
-}
 
-.main3bis {
-    & h4 {
-        &::after {
-            content: "";
-            position: absolute;
-            top: 72rem;
-            left: .7rem;
-            height: 0.25rem;
-            width: 2.5rem;
-            background-color: $color__green;
-        }
+    & .titre__desserts::after {
+        top: 65.5rem;
+    }
+
+    & .titre__platsbis::after {
+        top: 50.5rem;
+    }
+
+    & .titre__dessertsbis::after {
+        top: 70.5rem;
     }
 }
 
@@ -735,6 +728,24 @@ main {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        background-color: white;
+
+        & .main__resto--titre  {
+            padding: 0;
+        }
+
+        & .section__resto--cards {
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: $color__light;
+
+
+
+            
+        }
 
         & .main__resto--titre {
             width: 80%;
@@ -754,32 +765,32 @@ main {
 
             & h4::after {
                 width: 3.3rem;
+                left: 22%;
             }
 
-            & .titre__entrees {
-                &::after {
-                    left: 15%;
-                    top: 28.7rem;
-                    position: absolute;
-                }
+            & .titre__entrees::after {
+                    top: 26rem;
             }
 
-            & .titre__plats {
-                &::after {
-                    top: 50.2rem;
-                    left: 15%;
-                }
+            & .titre__plats::after {
+                    top: 47.5rem;
             }
 
-            & .titre__desserts {
-                &::after {
-                    top: 71.8rem;
-                    left: 15%;
-                }
+            & .titre__platsbis::after {
+                top: 52.5rem;
+            }
+
+            & .titre__desserts::after {
+                    top: 69rem;
+            }
+
+            & .titre__dessertsbis::after {
+                top: 74rem;
             }
 
             & .main__cards--section1 {
-                font-size:medium;
+                font-size: medium;
+
                 & h5 {
                     font-size: larger;
                 }
@@ -794,7 +805,7 @@ main {
 
     }
 
-    
+
 
     // .main__entrees--content {
     //     display: flex;

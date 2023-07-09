@@ -327,10 +327,10 @@ footer p {
      object-fit: cover;
 }
 
-main {
+.main__resto {
   background-color: #f6f6f6;
 }
-main .main__resto--titre {
+.main__resto .main__resto--titre {
   margin-top: -2rem;
   padding: 10px 10px;
   border-radius: 2rem 2rem 0 0;
@@ -339,39 +339,39 @@ main .main__resto--titre {
   display: flex;
   align-items: center;
 }
-main .main__resto--titre h2 {
+.main__resto .main__resto--titre h2 {
   margin-right: 30px;
   font-weight: normal;
   font-family: "Shrikhand", cursive;
 }
-main .main__resto--titre i {
+.main__resto .main__resto--titre i {
   font-size: 2rem;
   position: absolute;
   right: 1rem;
   top: 35%;
 }
-main .main__resto--titre .fa-solid {
+.main__resto .main__resto--titre .fa-solid {
   color: transparent;
   background: linear-gradient(to top, #9356DC, #FF79DA);
   background-clip: text;
   -webkit-background-clip: text;
   transition: all 200ms ease-in;
 }
-main .custom-checkbox input[type=checkbox],
-main .custom-checkbox .checked {
+.main__resto .custom-checkbox input[type=checkbox],
+.main__resto .custom-checkbox .checked {
   display: none;
 }
-main .custom-checkbox input[type=checkbox]:checked ~ .checked {
+.main__resto .custom-checkbox input[type=checkbox]:hover ~ .checked {
   display: inline-block;
 }
-main .custom-checkbox input[type=checkbox]:checked ~ .unchecked {
+.main__resto .custom-checkbox input[type=checkbox]:hover ~ .unchecked {
   display: none;
 }
-main .btn__resto {
+.main__resto .btn__resto {
   display: flex;
   justify-content: center;
 }
-main .btn {
+.main__resto .btn {
   color: white;
   font-weight: bold;
   background: linear-gradient(to top, #9356DC, #FF79DA);
@@ -383,7 +383,7 @@ main .btn {
   transition-duration: 500ms;
   cursor: pointer;
 }
-main .btn:hover {
+.main__resto .btn:hover {
   background: linear-gradient(to top, rgb(187, 108, 240), rgb(245, 147, 240));
   box-shadow: 0px 2px 20px grey;
 }
@@ -471,44 +471,28 @@ main .btn:hover {
   font-size: smaller;
 }
 
-.main2 h4::after {
+.main__resto--cards h4::after {
   content: "";
   position: absolute;
-  top: 47rem;
-  left: 0.7rem;
   height: 0.25rem;
   width: 2.5rem;
   background-color: #99E2D0;
+  left: 0.7rem;
 }
-
-.main3 h4::after {
-  content: "";
-  position: absolute;
-  top: 67rem;
-  left: 0.7rem;
-  height: 0.25rem;
-  width: 2.5rem;
-  background-color: #99E2D0;
+.main__resto--cards .titre__entrees::after {
+  top: 25.3rem;
 }
-
-.main2bis h4::after {
-  content: "";
-  position: absolute;
-  top: 52rem;
-  left: 0.7rem;
-  height: 0.25rem;
-  width: 2.5rem;
-  background-color: #99E2D0;
+.main__resto--cards .titre__plats::after {
+  top: 45.5rem;
 }
-
-.main3bis h4::after {
-  content: "";
-  position: absolute;
-  top: 72rem;
-  left: 0.7rem;
-  height: 0.25rem;
-  width: 2.5rem;
-  background-color: #99E2D0;
+.main__resto--cards .titre__desserts::after {
+  top: 65.5rem;
+}
+.main__resto--cards .titre__platsbis::after {
+  top: 50.5rem;
+}
+.main__resto--cards .titre__dessertsbis::after {
+  top: 70.5rem;
 }
 
 @media screen and (min-width: 768px) {
@@ -517,6 +501,18 @@ main .btn:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: white;
+  }
+  .main__resto .main__resto--titre {
+    padding: 0;
+  }
+  .main__resto .section__resto--cards {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f6f6f6;
   }
   .main__resto .main__resto--titre {
     width: 80%;
@@ -534,19 +530,22 @@ main .btn:hover {
   }
   .main__resto .main__resto--cards h4::after {
     width: 3.3rem;
+    left: 22%;
   }
   .main__resto .main__resto--cards .titre__entrees::after {
-    left: 15%;
-    top: 28.7rem;
-    position: absolute;
+    top: 26rem;
   }
   .main__resto .main__resto--cards .titre__plats::after {
-    top: 50.2rem;
-    left: 15%;
+    top: 47.5rem;
+  }
+  .main__resto .main__resto--cards .titre__platsbis::after {
+    top: 52.5rem;
   }
   .main__resto .main__resto--cards .titre__desserts::after {
-    top: 71.8rem;
-    left: 15%;
+    top: 69rem;
+  }
+  .main__resto .main__resto--cards .titre__dessertsbis::after {
+    top: 74rem;
   }
   .main__resto .main__resto--cards .main__cards--section1 {
     font-size: medium;

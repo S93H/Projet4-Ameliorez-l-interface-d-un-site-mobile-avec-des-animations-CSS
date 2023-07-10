@@ -215,24 +215,48 @@ header {
             justify-content: space-between;
 
 
-            & .description h5,
-            p {
-                margin: 5px;
+            & .description {
+                position: relative;
+                width: 100%;
+
+                & h5,
+                p {
+                    margin: 5px;
+                }
+
+                & i {
+                    // margin-top: 8px;
+                    // margin-right: 10px;
+                    position: absolute;
+                    right: 1rem;
+                    top: 30%;
+                    transform: translateY(-50%);
+
+
+                }
+
+                .fa-solid {
+                    color: transparent;
+                    transition: all 200ms ease-in;
+                }
+
+                .fa-solid:hover {
+                    display: block;
+                    background: linear-gradient(to top, $color__purple, $color__pink );
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                }
+
+                .fa-regular:hover {
+                    display: none;
+                }
+
+
+
+
             }
 
-            & i {
-                margin-top: 8px;
-                margin-right: 10px;
 
-            }
-
-            .fa-solid {
-                color: transparent;
-                background: linear-gradient(to top, $color__purple, $color__pink );
-                background-clip: text;
-                -webkit-background-clip: text;
-                transition: all 200ms ease-in;
-            }
 
         }
     }
@@ -476,7 +500,7 @@ footer {
 
 }
 
-.main__resto  {
+.main__resto {
     background-color: $color__light;
 
     & .main__resto--titre {
@@ -503,10 +527,14 @@ footer {
 
         .fa-solid {
             color: transparent;
-            background: linear-gradient(to top, $color__purple, $color__pink );
+           
+            transition: all 200ms ease-in;
+        }
+
+        .fa-solid:hover {
+             background: linear-gradient(to top, $color__purple, $color__pink );
             background-clip: text;
             -webkit-background-clip: text;
-            transition: all 200ms ease-in;
         }
 
 
@@ -525,18 +553,48 @@ footer {
     //     display: none;
     // }
 
-    .custom-checkbox input[type="checkbox"],
-    .custom-checkbox .checked {
-        display: none;
-    }
 
-    .custom-checkbox input[type="checkbox"]:hover~.checked {
-        display: inline-block;
-    }
 
-    .custom-checkbox input[type="checkbox"]:hover~.unchecked {
-        display: none;
-    }
+
+
+
+    // .custom-checkbox input[type="checkbox"],
+    // .custom-checkbox .checked {
+    //     display: none;
+    // }
+
+    // .custom-checkbox input[type="checkbox"]:hover~.checked {
+    //     display: inline-block;
+    // }
+
+    // .custom-checkbox input[type="checkbox"]:hover~.unchecked {
+    //     display: none;
+    // }
+
+
+
+
+
+    // .custom-checkbox .checked {
+    //     display: none;
+    // }
+
+    // .custom-checkbox:hover~.checked {
+    //     display: inline-block;
+    // }
+
+    // .custom-checkbox:hover~.unchecked {
+    //     display: none;
+    // }
+
+
+
+
+
+
+
+
+
 
 
 
@@ -730,7 +788,7 @@ footer {
         align-items: center;
         background-color: white;
 
-        & .main__resto--titre  {
+        & .main__resto--titre {
             padding: 0;
         }
 
@@ -742,9 +800,6 @@ footer {
             align-items: center;
             background-color: $color__light;
 
-
-
-            
         }
 
         & .main__resto--titre {
@@ -754,8 +809,9 @@ footer {
             font-size: large;
 
             & i {
-                position: relative;
-                padding-left: 40px;
+                position: absolute;
+                left: 70%;
+                width: 33px;
             }
         }
 
@@ -769,11 +825,11 @@ footer {
             }
 
             & .titre__entrees::after {
-                    top: 26rem;
+                top: 26rem;
             }
 
             & .titre__plats::after {
-                    top: 47.5rem;
+                top: 47.5rem;
             }
 
             & .titre__platsbis::after {
@@ -781,7 +837,7 @@ footer {
             }
 
             & .titre__desserts::after {
-                    top: 69rem;
+                top: 69rem;
             }
 
             & .titre__dessertsbis::after {

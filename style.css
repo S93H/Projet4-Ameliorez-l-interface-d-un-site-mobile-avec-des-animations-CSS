@@ -174,20 +174,32 @@ header .header__reservation button:hover {
   display: flex;
   justify-content: space-between;
 }
+.main__restaurants .main__restaurant--card .main__restaurants--description .description {
+  position: relative;
+  width: 100%;
+}
 .main__restaurants .main__restaurant--card .main__restaurants--description .description h5,
-.main__restaurants .main__restaurant--card .main__restaurants--description p {
+.main__restaurants .main__restaurant--card .main__restaurants--description .description p {
   margin: 5px;
 }
-.main__restaurants .main__restaurant--card .main__restaurants--description i {
-  margin-top: 8px;
-  margin-right: 10px;
+.main__restaurants .main__restaurant--card .main__restaurants--description .description i {
+  position: absolute;
+  right: 1rem;
+  top: 30%;
+  transform: translateY(-50%);
 }
-.main__restaurants .main__restaurant--card .main__restaurants--description .fa-solid {
+.main__restaurants .main__restaurant--card .main__restaurants--description .description .fa-solid {
   color: transparent;
+  transition: all 200ms ease-in;
+}
+.main__restaurants .main__restaurant--card .main__restaurants--description .description .fa-solid:hover {
+  display: block;
   background: linear-gradient(to top, #9356DC, #FF79DA);
   background-clip: text;
   -webkit-background-clip: text;
-  transition: all 200ms ease-in;
+}
+.main__restaurants .main__restaurant--card .main__restaurants--description .description .fa-regular:hover {
+  display: none;
 }
 
 footer {
@@ -352,20 +364,12 @@ footer p {
 }
 .main__resto .main__resto--titre .fa-solid {
   color: transparent;
+  transition: all 200ms ease-in;
+}
+.main__resto .main__resto--titre .fa-solid:hover {
   background: linear-gradient(to top, #9356DC, #FF79DA);
   background-clip: text;
   -webkit-background-clip: text;
-  transition: all 200ms ease-in;
-}
-.main__resto .custom-checkbox input[type=checkbox],
-.main__resto .custom-checkbox .checked {
-  display: none;
-}
-.main__resto .custom-checkbox input[type=checkbox]:hover ~ .checked {
-  display: inline-block;
-}
-.main__resto .custom-checkbox input[type=checkbox]:hover ~ .unchecked {
-  display: none;
 }
 .main__resto .btn__resto {
   display: flex;
@@ -521,8 +525,9 @@ footer p {
     font-size: large;
   }
   .main__resto .main__resto--titre i {
-    position: relative;
-    padding-left: 40px;
+    position: absolute;
+    left: 70%;
+    width: 33px;
   }
   .main__resto .main__resto--cards {
     width: 70%;

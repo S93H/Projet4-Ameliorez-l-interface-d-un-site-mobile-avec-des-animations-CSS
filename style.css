@@ -638,22 +638,15 @@ footer p {
   }
   .main__resto .main__resto--cards h4::after {
     width: 3.3rem;
-    left: 22%;
-  }
-  .main__resto .main__resto--cards .titre__entrees::after {
-    top: 26rem;
-  }
-  .main__resto .main__resto--cards .titre__plats::after {
-    top: 47.5rem;
+    top: 4.2rem;
   }
   .main__resto .main__resto--cards .titre__platsbis::after {
-    top: 52.5rem;
-  }
-  .main__resto .main__resto--cards .titre__desserts::after {
-    top: 69rem;
+    top: 52.2rem;
+    left: 22%;
   }
   .main__resto .main__resto--cards .titre__dessertsbis::after {
-    top: 74rem;
+    top: 73.8rem;
+    left: 22%;
   }
   .main__resto .main__resto--cards .main__cards--section1 {
     font-size: medium;

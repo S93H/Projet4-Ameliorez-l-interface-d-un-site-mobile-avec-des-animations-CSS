@@ -842,27 +842,20 @@ footer {
 
             & h4::after {
                 width: 3.3rem;
+                top: 4.2rem;
+            
+            }
+
+
+            & .titre__platsbis::after {
+                top: 52.2rem;
                 left: 22%;
             }
 
-            & .titre__entrees::after {
-                top: 26rem;
-            }
-
-            & .titre__plats::after {
-                top: 47.5rem;
-            }
-
-            & .titre__platsbis::after {
-                top: 52.5rem;
-            }
-
-            & .titre__desserts::after {
-                top: 69rem;
-            }
 
             & .titre__dessertsbis::after {
-                top: 74rem;
+                top: 73.8rem;
+                left: 22%;
             }
 
             & .main__cards--section1 {

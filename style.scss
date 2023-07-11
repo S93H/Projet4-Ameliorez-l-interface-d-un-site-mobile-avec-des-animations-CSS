@@ -12,6 +12,106 @@ $color__green: #99E2D0;
 $color__lightgrey: rgb(212, 209, 209);
 $color__light: #f6f6f6;
 
+.sectionLoader {
+    background-color: $color__light;
+    position: fixed;
+    height: 100vh;
+    inset: 0;
+    z-index: 1;
+    opacity: .8;
+    display: flex;
+    justify-content: center;
+    animation: disappear 500ms;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+    transform-origin: 44rem 38rem;
+
+    @keyframes disappear {
+        0% {
+            transform: scale(1);
+        }
+
+        100% {
+            transform: scale(0);
+        }
+    }
+
+
+
+    & .loader {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+
+
+
+
+        & .ring {
+            width: 200px;
+            height: 200px;
+            border: 0px solid $color__light;
+            border-radius: 50%;
+            position: absolute;
+            top: 30rem;
+
+            &:nth-child(1) {
+                border-bottom-width: 8px;
+                border-color: $color__purple;
+                animation: rotate1 2s linear infinite;
+            }
+
+            &:nth-child(2) {
+                border-right-width: 8px;
+                border-color: $color__green;
+                animation: rotate2 2s linear infinite;
+            }
+
+            &:nth-child(3) {
+                border-top-width: 8px;
+                border-color: $color__pink;
+                animation: rotate3 2s linear infinite;
+            }
+        }
+
+        & .loading {
+            position: absolute;
+            top: 36rem;
+        }
+    }
+
+    @keyframes rotate1 {
+        0% {
+            transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
+        }
+
+        100% {
+            transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
+        }
+    }
+
+    @keyframes rotate2 {
+        0% {
+            transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);
+        }
+
+        100% {
+            transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
+        }
+    }
+
+    @keyframes rotate3 {
+        0% {
+            transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg);
+        }
+
+        100% {
+            transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
+        }
+    }
+}
+
 .flex-centre {
     display: flex;
     flex-direction: column;
@@ -127,6 +227,21 @@ header {
         text-align: center;
         justify-content: center;
         align-items: center;
+        cursor: pointer;
+
+        & i {
+            color: grey;
+            margin-right: 20px;
+
+        }
+
+        &:hover {
+            background-color: rgb(230, 230, 230);
+
+            & i {
+                color: $color__purple;
+            }
+        }
 
 
         &::before {
@@ -141,15 +256,7 @@ header {
         }
     }
 
-    & i {
-        color: grey;
-        margin-right: 20px;
 
-        &:hover {
-            color: #9356DC;
-        }
-
-    }
 }
 
 .main__restaurants {
@@ -238,17 +345,15 @@ header {
                 .fa-solid {
                     color: transparent;
                     transition: all 200ms ease-in;
-                }
-
-                .fa-solid:hover {
-                    display: block;
                     background: linear-gradient(to top, $color__purple, $color__pink );
                     background-clip: text;
                     -webkit-background-clip: text;
+                    opacity: 0;
                 }
 
-                .fa-regular:hover {
-                    display: none;
+                .fa-solid:hover {
+                    opacity: 1;
+
                 }
 
 
@@ -368,24 +473,6 @@ footer {
         left: 3%;
     }
 
-    // .main__fonctionnement ol {
-    //     padding: 30px;
-    //     display: flex;
-    //     flex-direction: row;
-    //     justify-content: center;
-    // }
-    // .main__fonctionnement li {
-    //     font-size: medium;
-    //     display: flex;
-    //     margin: 20px;
-    //     padding: 20px;
-    //     width: 250px;
-
-    //     & i {
-    //         margin: 0 15px 0 0;
-    //     }
-    // }
-
     .center {
         display: flex;
         justify-content: center;
@@ -503,6 +590,18 @@ footer {
 .main__resto {
     background-color: $color__light;
 
+    & .section__resto--cards {
+        @keyframes appear {
+            0% {
+                transform: scale(0);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+    }
+
     & .main__resto--titre {
         margin-top: -2rem;
         padding: 10px 10px;
@@ -523,18 +622,20 @@ footer {
             position: absolute;
             right: 1rem;
             top: 35%;
+
         }
 
         .fa-solid {
+            opacity: 0;
+            transition: all .3s ease-in;
             color: transparent;
-           
-            transition: all 200ms ease-in;
+            background: linear-gradient(to top, $color__purple, $color__pink );
+            background-clip: text;
+            -webkit-background-clip: text;
         }
 
         .fa-solid:hover {
-             background: linear-gradient(to top, $color__purple, $color__pink );
-            background-clip: text;
-            -webkit-background-clip: text;
+            opacity: 1;
         }
 
 
@@ -552,50 +653,6 @@ footer {
     // .custom-checkbox input[type="checkbox"]:checked~.unchecked {
     //     display: none;
     // }
-
-
-
-
-
-
-    // .custom-checkbox input[type="checkbox"],
-    // .custom-checkbox .checked {
-    //     display: none;
-    // }
-
-    // .custom-checkbox input[type="checkbox"]:hover~.checked {
-    //     display: inline-block;
-    // }
-
-    // .custom-checkbox input[type="checkbox"]:hover~.unchecked {
-    //     display: none;
-    // }
-
-
-
-
-
-    // .custom-checkbox .checked {
-    //     display: none;
-    // }
-
-    // .custom-checkbox:hover~.checked {
-    //     display: inline-block;
-    // }
-
-    // .custom-checkbox:hover~.unchecked {
-    //     display: none;
-    // }
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -627,6 +684,26 @@ footer {
 .main__resto--cards {
     padding: 10px;
 
+    &.main1 {
+        animation: appear 1s;
+        animation-fill-mode: both;
+        transform-origin: left;
+    }
+
+    &.main2 {
+        animation: appear 1s;
+        animation-fill-mode: both;
+        transform-origin: left;
+        animation-delay: .5s;
+    }
+
+    &.main3 {
+        animation: appear 1s;
+        animation-fill-mode: both;
+        transform-origin: left;
+        animation-delay: .7s;
+    }
+
     & h4 {
         text-transform: uppercase;
         font-weight: lighter;
@@ -650,6 +727,15 @@ footer {
         margin: 10px 0;
         border-radius: 15px;
         box-shadow: 0px 2px 5px grey;
+        animation: appear 1s;
+        animation-fill-mode: both;
+        transform-origin: left;
+
+        // @for $i from 1 through 3 {
+        //     &:nth-child(#{$i}) {
+        //         animation-delay: 100ms * $i;
+        //     }
+        // }
 
         &:hover {
             & .box__entrees--check {
@@ -661,21 +747,11 @@ footer {
             padding: 10px 0 10px 10px;
             display: flex;
             width: 100%;
-            // flex-wrap: wrap;
             align-items: center;
             justify-content: space-between;
             font-size: small;
             overflow: hidden;
 
-            //    & .main__entrees--description {
-            //         overflow: hidden;
-
-            //         & p {
-            //             margin: 5px 0;
-            //             font-weight: lighter;
-            //             white-space: nowrap;
-            //         }
-            //     }
         }
 
         & h5 {
@@ -755,19 +831,20 @@ footer {
         width: 2.5rem;
         background-color: $color__green;
         left: .7rem;
+         top: 3.2rem;
     }
 
-    & .titre__entrees::after {
-        top: 25.3rem;
-    }
+    // & .titre__entrees::after {
+       
+    // }
 
-    & .titre__plats::after {
-        top: 45.5rem;
-    }
+    // & .titre__plats::after {
+    //     top: 3.2rem;
+    // }
 
-    & .titre__desserts::after {
-        top: 65.5rem;
-    }
+    // & .titre__desserts::after {
+    //     top: 3.2rem;
+    // }
 
     & .titre__platsbis::after {
         top: 50.5rem;

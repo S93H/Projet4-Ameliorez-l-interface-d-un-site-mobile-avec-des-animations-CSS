@@ -6,6 +6,86 @@ body {
   margin: 0;
 }
 
+.sectionLoader {
+  background-color: #f6f6f6;
+  position: fixed;
+  height: 100vh;
+  inset: 0;
+  z-index: 1;
+  opacity: 0.8;
+  display: flex;
+  justify-content: center;
+  animation: disappear 500ms;
+  animation-delay: 3s;
+  animation-fill-mode: forwards;
+  transform-origin: 44rem 38rem;
+}
+@keyframes disappear {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+.sectionLoader .loader {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sectionLoader .loader .ring {
+  width: 200px;
+  height: 200px;
+  border: 0px solid #f6f6f6;
+  border-radius: 50%;
+  position: absolute;
+  top: 30rem;
+}
+.sectionLoader .loader .ring:nth-child(1) {
+  border-bottom-width: 8px;
+  border-color: #9356DC;
+  animation: rotate1 2s linear infinite;
+}
+.sectionLoader .loader .ring:nth-child(2) {
+  border-right-width: 8px;
+  border-color: #99E2D0;
+  animation: rotate2 2s linear infinite;
+}
+.sectionLoader .loader .ring:nth-child(3) {
+  border-top-width: 8px;
+  border-color: #FF79DA;
+  animation: rotate3 2s linear infinite;
+}
+.sectionLoader .loader .loading {
+  position: absolute;
+  top: 36rem;
+}
+@keyframes rotate1 {
+  0% {
+    transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
+  }
+}
+@keyframes rotate2 {
+  0% {
+    transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
+  }
+}
+@keyframes rotate3 {
+  0% {
+    transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
+  }
+}
+
 .flex-centre {
   display: flex;
   flex-direction: column;
@@ -100,6 +180,17 @@ header .header__reservation button:hover {
   text-align: center;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+}
+.main__fonctionnement li i {
+  color: grey;
+  margin-right: 20px;
+}
+.main__fonctionnement li:hover {
+  background-color: rgb(230, 230, 230);
+}
+.main__fonctionnement li:hover i {
+  color: #9356DC;
 }
 .main__fonctionnement li::before {
   content: counter(liste);
@@ -110,13 +201,6 @@ header .header__reservation button:hover {
   border-radius: 50%;
   position: absolute;
   left: 2%;
-}
-.main__fonctionnement i {
-  color: grey;
-  margin-right: 20px;
-}
-.main__fonctionnement i:hover {
-  color: #9356DC;
 }
 
 .main__restaurants {
@@ -191,15 +275,13 @@ header .header__reservation button:hover {
 .main__restaurants .main__restaurant--card .main__restaurants--description .description .fa-solid {
   color: transparent;
   transition: all 200ms ease-in;
-}
-.main__restaurants .main__restaurant--card .main__restaurants--description .description .fa-solid:hover {
-  display: block;
   background: linear-gradient(to top, #9356DC, #FF79DA);
   background-clip: text;
   -webkit-background-clip: text;
+  opacity: 0;
 }
-.main__restaurants .main__restaurant--card .main__restaurants--description .description .fa-regular:hover {
-  display: none;
+.main__restaurants .main__restaurant--card .main__restaurants--description .description .fa-solid:hover {
+  opacity: 1;
 }
 
 footer {
@@ -342,6 +424,14 @@ footer p {
 .main__resto {
   background-color: #f6f6f6;
 }
+@keyframes appear {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 .main__resto .main__resto--titre {
   margin-top: -2rem;
   padding: 10px 10px;
@@ -363,13 +453,15 @@ footer p {
   top: 35%;
 }
 .main__resto .main__resto--titre .fa-solid {
+  opacity: 0;
+  transition: all 0.3s ease-in;
   color: transparent;
-  transition: all 200ms ease-in;
-}
-.main__resto .main__resto--titre .fa-solid:hover {
   background: linear-gradient(to top, #9356DC, #FF79DA);
   background-clip: text;
   -webkit-background-clip: text;
+}
+.main__resto .main__resto--titre .fa-solid:hover {
+  opacity: 1;
 }
 .main__resto .btn__resto {
   display: flex;
@@ -395,6 +487,23 @@ footer p {
 .main__resto--cards {
   padding: 10px;
 }
+.main__resto--cards.main1 {
+  animation: appear 1s;
+  animation-fill-mode: both;
+  transform-origin: left;
+}
+.main__resto--cards.main2 {
+  animation: appear 1s;
+  animation-fill-mode: both;
+  transform-origin: left;
+  animation-delay: 0.5s;
+}
+.main__resto--cards.main3 {
+  animation: appear 1s;
+  animation-fill-mode: both;
+  transform-origin: left;
+  animation-delay: 0.7s;
+}
 .main__resto--cards h4 {
   text-transform: uppercase;
   font-weight: lighter;
@@ -416,6 +525,9 @@ footer p {
   margin: 10px 0;
   border-radius: 15px;
   box-shadow: 0px 2px 5px grey;
+  animation: appear 1s;
+  animation-fill-mode: both;
+  transform-origin: left;
 }
 .main__resto--cards .main__cards--box:hover .box__entrees--check {
   margin: 0;
@@ -481,15 +593,7 @@ footer p {
   width: 2.5rem;
   background-color: #99E2D0;
   left: 0.7rem;
-}
-.main__resto--cards .titre__entrees::after {
-  top: 25.3rem;
-}
-.main__resto--cards .titre__plats::after {
-  top: 45.5rem;
-}
-.main__resto--cards .titre__desserts::after {
-  top: 65.5rem;
+  top: 3.2rem;
 }
 .main__resto--cards .titre__platsbis::after {
   top: 50.5rem;

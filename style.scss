@@ -124,7 +124,7 @@ h1 {
     font-family: 'Shrikhand', cursive;
 }
 
-h5 {
+h3 {
     font-size: large;
     font-weight: bolder;
 }
@@ -270,6 +270,10 @@ header {
         font-weight: bold;
     }
 
+    & .main__restaurants--cards {
+        width: 100%;
+    }
+
     & .main__restaurant--card {
         text-decoration: none;
 
@@ -325,7 +329,7 @@ header {
                 position: relative;
                 width: 100%;
 
-                & h5,
+                & h3,
                 p {
                     margin: 5px;
                 }
@@ -372,11 +376,16 @@ footer {
     padding: 20px;
     font-weight: bold;
 
+    & .footer__content {
+        display: flex;
+        flex-direction: column;
+    }
+
     & .footer__ustensils--link i {
         margin-right: 5px;
     }
 
-    & h5 {
+    & h3 {
         font-family: 'Shrikhand', cursive;
         margin: 0px 0 20px;
 
@@ -387,9 +396,11 @@ footer {
         color: white;
     }
 
-    & p {
-        margin: 0;
-    }
+
+
+    // & p {
+    //     margin: 0;
+    // }
 }
 
 @media screen and (min-width: 450px) {
@@ -431,8 +442,12 @@ footer {
         margin-left: 50px;
     }
 
+    .main__fonctionnement li {
+        position: relative;
+    }
+
     .main__fonctionnement li::before {
-        left: 3%;
+        left: -1rem;
     }
 
     .center {
@@ -452,7 +467,7 @@ footer {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
 
-        & a {
+        & article {
             margin: 10px 70px;
         }
 
@@ -468,7 +483,7 @@ footer {
         justify-content: flex-start;
         padding-top: 50px;
 
-        & h5 {
+        & h3 {
             margin: 10px 10px 10px 60px;
         }
 
@@ -506,10 +521,9 @@ footer {
     }
 
     .main__fonctionnement li {
-        font-size: medium;
-
+        width: 300px;
         &::before {
-            left: 2%;
+            left: -1rem;
         }
     }
 
@@ -528,7 +542,16 @@ footer {
     }
 }
 
+@media screen and (min-width: 1024px) {
+    .main__fonctionnement ol {
+        display: flex;
+        white-space: nowrap;
+        justify-content: center;
+    }
+}
+
 @media screen and (min-width: 1350px) {
+
     .main__fonctionnement h2 {
         margin-left: 130px;
     }
@@ -669,12 +692,15 @@ footer {
     & h4 {
         text-transform: uppercase;
         font-weight: lighter;
+        position: relative;
 
         &::after {
             content: "";
-            position: absolute;
-            top: 26.8rem;
-            left: .7rem;
+            // position: absolute;
+            position: fixed;
+            display: flex;
+            // top: 26.8rem;
+            // left: .7rem;
             height: 0.25rem;
             width: 2.5rem;
             background-color: $color__green;
@@ -710,7 +736,7 @@ footer {
 
         }
 
-        & h5 {
+        & h3 {
             margin: 0;
             font-size: 15px;
             white-space: nowrap;
@@ -731,7 +757,9 @@ footer {
 
             & .checkedIcone {
                 padding: 3px;
-                border-radius: 50%;
+                height: auto;
+                // border-radius: 50%;
+                clip-path: ellipse(50% 50%);
                 color: $color__green;
                 background: white;
             }
@@ -769,15 +797,20 @@ footer {
 
 
 .main__resto--cards {
-    & h4::after {
-        content: "";
-        position: absolute;
-        height: 0.25rem;
-        width: 2.5rem;
-        background-color: $color__green;
-        left: .7rem;
-         top: 3.2rem;
-    }
+    // & h4::after {
+    //     content: "";
+    //     height: 0.25rem;
+    //     width: 2.5rem;
+    //     // background-color: $color__green;
+    //     left: .7rem;
+    //      top: 3.2rem;
+    // }
+
+
+
+
+
+
 
     // & .titre__entrees::after {
        
@@ -791,13 +824,7 @@ footer {
     //     top: 3.2rem;
     // }
 
-    & .titre__platsbis::after {
-        top: 50.5rem;
-    }
-
-    & .titre__dessertsbis::after {
-        top: 70.5rem;
-    }
+   
 }
 
 @media screen and (min-width: 768px) {
@@ -846,17 +873,6 @@ footer {
             
             }
 
-
-            & .titre__platsbis::after {
-                top: 52.2rem;
-                left: 22%;
-            }
-
-
-            & .titre__dessertsbis::after {
-                top: 73.8rem;
-                left: 22%;
-            }
 
             & .main__cards--section1 {
                 font-size: medium;

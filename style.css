@@ -98,7 +98,7 @@ h1 {
   font-family: "Shrikhand", cursive;
 }
 
-h5 {
+h3 {
   font-size: large;
   font-weight: bolder;
 }
@@ -214,6 +214,9 @@ header .header__reservation button:hover {
   margin-bottom: 30px;
   font-weight: bold;
 }
+.main__restaurants .main__restaurants--cards {
+  width: 100%;
+}
 .main__restaurants .main__restaurant--card {
   text-decoration: none;
 }
@@ -262,7 +265,7 @@ header .header__reservation button:hover {
   position: relative;
   width: 100%;
 }
-.main__restaurants .main__restaurant--card .main__restaurants--description .description h5,
+.main__restaurants .main__restaurant--card .main__restaurants--description .description h3,
 .main__restaurants .main__restaurant--card .main__restaurants--description .description p {
   margin: 5px;
 }
@@ -290,19 +293,20 @@ footer {
   padding: 20px;
   font-weight: bold;
 }
+footer .footer__content {
+  display: flex;
+  flex-direction: column;
+}
 footer .footer__ustensils--link i {
   margin-right: 5px;
 }
-footer h5 {
+footer h3 {
   font-family: "Shrikhand", cursive;
   margin: 0px 0 20px;
 }
 footer a {
   text-decoration: none;
   color: white;
-}
-footer p {
-  margin: 0;
 }
 
 @media screen and (min-width: 450px) {
@@ -332,8 +336,11 @@ footer p {
   .main__fonctionnement h2 {
     margin-left: 50px;
   }
+  .main__fonctionnement li {
+    position: relative;
+  }
   .main__fonctionnement li::before {
-    left: 3%;
+    left: -1rem;
   }
   .center {
     display: flex;
@@ -349,7 +356,7 @@ footer p {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
-  .main__restaurants--cards a {
+  .main__restaurants--cards article {
     margin: 10px 70px;
   }
   .main__restaurant--card {
@@ -361,7 +368,7 @@ footer p {
     justify-content: flex-start;
     padding-top: 50px;
   }
-  footer h5 {
+  footer h3 {
     margin: 10px 10px 10px 60px;
   }
   footer .footer__content {
@@ -389,10 +396,10 @@ footer p {
     margin-left: 60px;
   }
   .main__fonctionnement li {
-    font-size: medium;
+    width: 300px;
   }
   .main__fonctionnement li::before {
-    left: 2%;
+    left: -1rem;
   }
   .main__restaurants h2 {
     margin-left: 70px;
@@ -402,6 +409,13 @@ footer p {
   }
   .main__restaurants--cards a {
     margin: 10px 30px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .main__fonctionnement ol {
+    display: flex;
+    white-space: nowrap;
+    justify-content: center;
   }
 }
 @media screen and (min-width: 1350px) {
@@ -507,12 +521,12 @@ footer p {
 .main__resto--cards h4 {
   text-transform: uppercase;
   font-weight: lighter;
+  position: relative;
 }
 .main__resto--cards h4::after {
   content: "";
-  position: absolute;
-  top: 26.8rem;
-  left: 0.7rem;
+  position: fixed;
+  display: flex;
   height: 0.25rem;
   width: 2.5rem;
   background-color: #99E2D0;
@@ -541,7 +555,7 @@ footer p {
   font-size: small;
   overflow: hidden;
 }
-.main__resto--cards .main__cards--box h5 {
+.main__resto--cards .main__cards--box h3 {
   margin: 0;
   font-size: 15px;
   white-space: nowrap;
@@ -560,7 +574,9 @@ footer p {
 }
 .main__resto--cards .main__cards--box .box__entrees--check .checkedIcone {
   padding: 3px;
-  border-radius: 50%;
+  height: auto;
+  -webkit-clip-path: ellipse(50% 50%);
+          clip-path: ellipse(50% 50%);
   color: #99E2D0;
   background: white;
 }
@@ -584,22 +600,6 @@ footer p {
 .main__resto--cards .box__entrees--prix i {
   margin: 3px;
   font-size: smaller;
-}
-
-.main__resto--cards h4::after {
-  content: "";
-  position: absolute;
-  height: 0.25rem;
-  width: 2.5rem;
-  background-color: #99E2D0;
-  left: 0.7rem;
-  top: 3.2rem;
-}
-.main__resto--cards .titre__platsbis::after {
-  top: 50.5rem;
-}
-.main__resto--cards .titre__dessertsbis::after {
-  top: 70.5rem;
 }
 
 @media screen and (min-width: 768px) {
@@ -639,14 +639,6 @@ footer p {
   .main__resto .main__resto--cards h4::after {
     width: 3.3rem;
     top: 4.2rem;
-  }
-  .main__resto .main__resto--cards .titre__platsbis::after {
-    top: 52.2rem;
-    left: 22%;
-  }
-  .main__resto .main__resto--cards .titre__dessertsbis::after {
-    top: 73.8rem;
-    left: 22%;
   }
   .main__resto .main__resto--cards .main__cards--section1 {
     font-size: medium;
